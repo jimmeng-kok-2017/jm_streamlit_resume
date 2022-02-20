@@ -155,6 +155,7 @@ st.markdown('''
 - Collaborated with the Customs Clearance team including identifying and defining requirements, and analysing the feasibility of existing declaration processes for RPA
 - Created a detailed Process Definition Document, which was well-received by the management and was used in a multi-regional RPA meeting for the company.
 - Built a successful RPA project of transferring data from Outlook to the customs declaration portal to assist the Customs Clearance team via UiPath Studio, resulting in improving accuracy and reducing both `75%` of man-hours and manual customs declaration errors.
+- Created a live-action simulation video to raise awareness and advocate the importance of IT security to all the employees of DHL Express South Asia Hub.
 ''')
 
 txt('**Data Analyst Intern**, Deloitte, Singapore',
@@ -192,6 +193,7 @@ txt3('Data Processing/Wrangling:', '`SQL`, `Pandas`, `Numpy`')
 txt3('Data Visualisation:', '`Matplotlib`, `Seaborn`, `Plotly`, `ggplot2`, `Dash`, `R flexdashboard`, `Tableau`, `QGIS`')
 txt3('Machine Learning:', '`scikit-learn`, `SHAP`, `PyCaret`')
 txt3('Model Deployment:', '`Streamlit`, `R Shiny`')
+txt3('Content Creation:', '`Adobe Premiere Pro`')
 
 chart1,chart2 = st.columns(2)
 
