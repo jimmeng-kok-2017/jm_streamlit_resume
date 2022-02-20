@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.graph_objects as go
+from streamlit_echarts import st_echarts
 
 # st.set_page_config(layout="wide")
 
@@ -192,6 +193,100 @@ txt3('Data Visualisation:', '`Matplotlib`, `Seaborn`, `Plotly`, `ggplot2`, `Dash
 txt3('Machine Learning:', '`scikit-learn`, `SHAP`, `PyCaret`')
 txt3('Model Deployment:', '`Streamlit`, `R Shiny`')
 
+chart1,chart2 = st.beta_columns(2)
+
+with chart1:
+    st.markdown("**Proficiency level of my Coding Languages (%)**")
+
+    coding_options = {
+      "tooltip": {
+        "trigger": 'item'
+      },
+      "legend": {
+        "top": '5%',
+        "left": 'center'
+      },
+      "series": [
+        {
+          "name": 'Coding Language',
+          "type": 'pie',
+          "radius": ['40%', '70%'],
+          "avoidLabelOverlap": "false",
+          "itemStyle": {
+            "borderRadius": 10,
+            "borderColor": '#fff',
+            "borderWidth": 2
+          },
+          "label": {
+            "show": "false",
+            "position": 'center'
+          },
+          "emphasis": {
+            "label": {
+              "show": "true",
+              "fontSize": '40',
+              "fontWeight": 'bold'
+            }
+          },
+          "labelLine": {
+            "show": "false"
+          },
+          "data": [
+            { "value": 36, "name": 'Python' },
+            { "value": 32, "name": 'R' },
+            { "value": 32, "name": 'SQL' }
+          ]
+        }
+      ]
+    }
+    st_echarts(options=coding_options, width="100%", key=0)
+
+with chart2:
+    st.markdown("**Skills that I have acquired (%)**")
+
+    skills_options = {
+      "tooltip": {
+        "trigger": 'item'
+      },
+      "legend": {
+        "top": '5%',
+        "left": 'center'
+      },
+      "series": [
+        {
+          "name": 'Skills',
+          "type": 'pie',
+          "radius": ['40%', '70%'],
+          "avoidLabelOverlap": "false",
+          "itemStyle": {
+            "borderRadius": 10,
+            "borderColor": '#fff',
+            "borderWidth": 2
+          },
+          "label": {
+            "show": "false",
+            "position": 'center'
+          },
+          "emphasis": {
+            "label": {
+              "show": "true",
+              "fontSize": '40',
+              "fontWeight": 'bold'
+            }
+          },
+          "labelLine": {
+            "show": "false"
+          },
+          "data": [
+            { "value": 40, "name": 'Data Science and Analytics' },
+            { "value": 35, "name": 'Machine Learning' },
+            { "value": 25, "name": 'Marketing & Communications' }
+          ]
+        }
+      ]
+    }
+    st_echarts(options=skills_options, width="100%", key=1)
+
 # Make accurate % in seaborn pie plt
 def make_autopct(values):
   def my_autopct(pct):
@@ -212,11 +307,9 @@ skills_attributes = ['Marketing & Communications', 'Machine Learning', 'Data Sci
 fig2 = plt.figure(figsize = (5,5))
 plt.pie(skills_percentage,labels=skills_attributes, explode = [0.1,0.1,0.1], autopct=make_autopct(skills_percentage), colors=skills_colors,textprops={'fontsize': 20, 'color':'black', 'weight':'bold'})
 
-st.markdown("**Proficiency level of my Coding Languages**")
-st.pyplot(fig1)
+# st.pyplot(fig1)
 
-st.markdown("**Skills that I have acquired**")
-st.pyplot(fig2)
+# st.pyplot(fig2)
 
 st.markdown("**Ideal Candidate\'s Requirements**")
 table1 = go.Figure(data=[go.Table(header=dict(values=['Your potential candidate has', 'Am I your ideal candidate?']),
@@ -296,4 +389,4 @@ st.markdown('''
 ''')
 txt2('LinkedIn', 'https://www.linkedin.com/in/jimmengkok')
 txt2('GitHub', 'https://github.com/jimmeng-kok-2017/')
-txt2('Towards Data Science', 'http://towardsdatascience.com/@jimintheworld')
+txt2('Medium and TowardsDataScience', 'https://jimintheworld.medium.com/')
