@@ -391,4 +391,4 @@ st.markdown('''
 ''')
 txt2('LinkedIn', 'https://www.linkedin.com/in/jimmengkok')
 txt2('GitHub', 'https://github.com/jimmeng-kok-2017/')
-txt2('Medium and TowardsDataScience', 'https://jimintheworld.medium.com/')
+txt2('Towards Data Science', 'http://towardsdatascience.com/@jimintheworld')
