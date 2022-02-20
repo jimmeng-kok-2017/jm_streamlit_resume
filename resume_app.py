@@ -75,28 +75,28 @@ st.markdown("""
 #####################
 # Custom function for printing text
 def txt(a, b):
-  col1, col2 = st.beta_columns([4,2])
+  col1, col2 = st.columns([4,2])
   with col1:
     st.markdown(a)
   with col2:
     st.markdown(b)
 
 def txt2(a, b):
-  col1, col2 = st.beta_columns([3,4])
+  col1, col2 = st.columns([3,4])
   with col1:
     st.markdown(f'`{a}`')
   with col2:
     st.markdown(b)
 
 def txt3(a, b):
-  col1, col2 = st.beta_columns([3,2])
+  col1, col2 = st.columns([3,2])
   with col1:
     st.markdown(a)
   with col2:
     st.markdown(b)
 
 def txt4(a, b, c):
-  col1, col2, col3 = st.beta_columns([1.5,2,2])
+  col1, col2, col3 = st.columns([1.5,2,2])
   with col1:
     st.markdown(f'`{a}`')
   with col2:
@@ -193,7 +193,7 @@ txt3('Data Visualisation:', '`Matplotlib`, `Seaborn`, `Plotly`, `ggplot2`, `Dash
 txt3('Machine Learning:', '`scikit-learn`, `SHAP`, `PyCaret`')
 txt3('Model Deployment:', '`Streamlit`, `R Shiny`')
 
-chart1,chart2 = st.beta_columns(2)
+chart1,chart2 = st.columns(2)
 
 with chart1:
     st.markdown("**Proficiency level of my Coding Languages (%)**")
@@ -287,25 +287,25 @@ with chart2:
     }
     st_echarts(options=skills_options, width="100%", key=1)
 
-# Make accurate % in seaborn pie plt
-def make_autopct(values):
-  def my_autopct(pct):
-    return '{p:.0f}%'.format(p=pct)
-  return my_autopct
+# # Make accurate % in seaborn pie plt
+# def make_autopct(values):
+#   def my_autopct(pct):
+#     return '{p:.0f}%'.format(p=pct)
+#   return my_autopct
 
-coding_colors = sns.color_palette('pastel')
-coding_picked_colors = coding_colors[0:2]
-coding_percentage = [32,32,36]
-coding_attributes = ['SQL', 'R', 'Python']
-fig1 = plt.figure(figsize = (5,5))
-plt.pie(coding_percentage,labels=coding_attributes, explode = [0.1,0.1,0.1], autopct=make_autopct(coding_percentage), colors=coding_colors,textprops={'fontsize': 10, 'color':'black', 'weight':'bold'})
+# coding_colors = sns.color_palette('pastel')
+# coding_picked_colors = coding_colors[0:2]
+# coding_percentage = [32,32,36]
+# coding_attributes = ['SQL', 'R', 'Python']
+# fig1 = plt.figure(figsize = (5,5))
+# plt.pie(coding_percentage,labels=coding_attributes, explode = [0.1,0.1,0.1], autopct=make_autopct(coding_percentage), colors=coding_colors,textprops={'fontsize': 10, 'color':'black', 'weight':'bold'})
 
-skills_colors = sns.color_palette('pastel')
-skills_picked_colors = skills_colors[0:2]
-skills_percentage = [25,35,40]
-skills_attributes = ['Marketing & Communications', 'Machine Learning', 'Data Science and Analytics']
-fig2 = plt.figure(figsize = (5,5))
-plt.pie(skills_percentage,labels=skills_attributes, explode = [0.1,0.1,0.1], autopct=make_autopct(skills_percentage), colors=skills_colors,textprops={'fontsize': 20, 'color':'black', 'weight':'bold'})
+# skills_colors = sns.color_palette('pastel')
+# skills_picked_colors = skills_colors[0:2]
+# skills_percentage = [25,35,40]
+# skills_attributes = ['Marketing & Communications', 'Machine Learning', 'Data Science and Analytics']
+# fig2 = plt.figure(figsize = (5,5))
+# plt.pie(skills_percentage,labels=skills_attributes, explode = [0.1,0.1,0.1], autopct=make_autopct(skills_percentage), colors=skills_colors,textprops={'fontsize': 20, 'color':'black', 'weight':'bold'})
 
 # st.pyplot(fig1)
 
