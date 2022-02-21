@@ -5,6 +5,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.graph_objects as go
 from streamlit_echarts import st_echarts
+import os
+import json
+import requests
+from streamlit_folium import folium_static
+import folium
+
 
 # st.set_page_config(layout="wide")
 
@@ -106,6 +112,64 @@ def txt4(a, b, c):
 
 #####################
 st.markdown('''
+##### Map showing the location of my Academic and Work Experience
+''')
+
+tp_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+'Temasek Polytechnic'+'&returnGeom=Y&getAddrDetails=Y'
+tp_resp = requests.get(tp_string)
+tp_data = json.loads(tp_resp.content)
+tp_real_data = tp_data['results'][0]
+tp_lat = float(tp_real_data['LATITUDE'])
+tp_long = float(tp_real_data['LONGITUDE'])
+
+smu_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+'Singapore Management University'+'&returnGeom=Y&getAddrDetails=Y'
+smu_resp = requests.get(smu_string)
+smu_data = json.loads(smu_resp.content)
+smu_real_data = smu_data['results'][6]
+smu_lat = float(smu_real_data['LATITUDE'])
+smu_long = float(smu_real_data['LONGITUDE'])
+
+dhl_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+'DHL EXPRESS SOUTH EAST ASIA HUB'+'&returnGeom=Y&getAddrDetails=Y'
+dhl_resp = requests.get(dhl_string)
+dhl_data = json.loads(dhl_resp.content)
+dhl_real_data = dhl_data['results'][0]
+dhl_lat = float(dhl_real_data['LATITUDE'])
+dhl_long = float(dhl_real_data['LONGITUDE'])
+
+cgh_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+'Changi General Hospital'+'&returnGeom=Y&getAddrDetails=Y'
+cgh_resp = requests.get(cgh_string)
+cgh_data = json.loads(cgh_resp.content)
+cgh_real_data = cgh_data['results'][0]
+cgh_lat = float(cgh_real_data['LATITUDE'])
+cgh_long = float(cgh_real_data['LONGITUDE'])
+
+ura_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+'Urban Redevelopment Authority'+'&returnGeom=Y&getAddrDetails=Y'
+ura_resp = requests.get(ura_string)
+ura_data = json.loads(ura_resp.content)
+ura_real_data = ura_data['results'][0]
+ura_lat = float(ura_real_data['LATITUDE'])
+ura_long = float(ura_real_data['LONGITUDE'])
+
+deloitte_lat = 1.279294354726619
+deloitte_long = 103.8492895
+
+ey_lat = 1.2823211397542482
+ey_long = 103.85174512329272
+
+m = folium.Map(location=[1.3627228720885567, 103.80849927659521], zoom_start=11)
+
+folium.Marker(location=[tp_lat,tp_long], popup='Temasek Polytechnic: 2012-2015',icon=folium.Icon(icon="graduation-cap", prefix='fa')).add_to(m)
+folium.Marker(location=[smu_lat,smu_long], popup='Singapore Management University: 2017-2021',icon=folium.Icon(icon="graduation-cap", prefix='fa')).add_to(m)
+folium.Marker(location=[deloitte_lat,deloitte_long], popup='Deloitte: 2014',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
+folium.Marker(location=[dhl_lat,dhl_long], popup='DHL Express: 2019',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
+folium.Marker(location=[ura_lat,ura_long], popup='Urban Redevelopment Authority: 2021',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
+folium.Marker(location=[ey_lat,ey_long], popup='Ernst and Young: 2021',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
+folium.Marker(location=[cgh_lat,cgh_long], popup='Changi General Hospital: 2022-Present',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
+
+folium_static(m)
+
+#####################
+st.markdown('''
 ## Education
 ''')
 
@@ -133,7 +197,7 @@ st.markdown('''
 - Performing complex data analysis and investigation on `600+` discharged patients' data through SAP and Sunrise Clinical Manager (SCM) for accurate reporting.
 ''')
 
-txt('**Business Analyst**, Ernst & Young, Singapore',
+txt('**Business Analyst**, Ernst and Young, Singapore',
 'Sep 2021-Nov 2021')
 st.markdown('''
 - Conducted data extraction for reporting and analysis to support `30+` ticket troubleshooting and stakeholders’ requests by executing SQL scripts in SQL Server Management Studio databases.
