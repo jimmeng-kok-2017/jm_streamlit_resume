@@ -321,8 +321,8 @@ table1 = go.Figure(data=[go.Table(header=dict(values=['Your potential candidate 
      'Strong knowledge of Python\'s and R\'s Analytics & Machine Learning Libraries as well as Tableau',
      'At least 5 years of working experience in analytics',
      'Experience in leading data analytics projects'],['Yes','Yes','Yes','Yes',
-     'No, but I do have experience in analytics since 2019 regardless it\'s during work, academic period, or working side projects as hobbies',
-     'No, but I did lead one of my academic projects on Geospatial Analytics back in SMU. Furthermore, I am eager to learn and motivate myself to acquire analytics work experience to lead my path to the day where I can able to lead a data analytics project and acquire project management skills at the same time']]))
+     'No, but I do have experience in analytics since 2019 whereby I have experienced in building different projects from academic projects to working on my personal side projects which helped me secure my internship at URA through publishing articles on Towards Data Science amidst the Covid-19 pandemic.',
+     'No, but I did lead a team of 3 people, including me, in the Geospatial Analytics project which helped to achieve a distinction in the module back in SMU. Furthermore, I am eager to learn and motivate myself to acquire analytics work experience to lead my path to the day where I can able to lead a data analytics project and acquire project management skills at the same time.']]))
                       ]).update_layout(height=575)
 st.plotly_chart(table1)
 
