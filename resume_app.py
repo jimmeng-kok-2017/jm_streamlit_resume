@@ -63,6 +63,9 @@ st.markdown("""
         <a class="nav-link" href="#streamlit-applications">Streamlit Applications</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="#courses-and-certifications-taken">Courses and Certifications taken</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#skills">Skills</a>
       </li>
       <li class="nav-item">
@@ -247,6 +250,13 @@ txt3('Vaccination Center Finder App','https://share.streamlit.io/jimmeng-kok-201
 txt3('Real-Time Weather Forecasting App','https://share.streamlit.io/jimmeng-kok-2017/weather_forecasting_app/main/main_app.py')
 txt3('Shark Attack Survival Predictor App','https://share.streamlit.io/jimmeng-kok-2017/shark_attack/main/app.py')
 
+st.markdown('''
+## Courses and Certifications taken
+''')
+txt4('EY Data Science - Learning', 'Ernst and Young','Issued: Oct 2021')
+txt4('Machine Learning Real World projects in Python', 'Udemy', 'Issued: Jul 2021')
+txt4('Analyzing Police Activity with pandas', 'Datacamp', 'Issued: Sep 2020')
+txt4('AWS Certified Cloud Practitioner', 'Amazon Web Services (AWS)', 'Issued: Jul 2020 (Expires Jul 2023)')
 
 #####################
 st.markdown('''
