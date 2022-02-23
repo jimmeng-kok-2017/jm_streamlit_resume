@@ -30,7 +30,7 @@ st.image(image, width=150)
 st.markdown('## Summary', unsafe_allow_html=True)
 st.info('''
 - Motivated Learner, and have a passion for analytics by developing analytics products and delivering insights by writing articles. 
-- Strong relevant analytics experience from Urban Redevelopment Authority (URA), Changi General Hospital (CGH), and Ernst & Young (EY).
+- Strong relevant analytics experience from Urban Redevelopment Authority (URA), Changi General Hospital (CGH), and Ernst and Young (EY).
 - Reading, understanding, and catching up with the up and coming analytics & machine learning libraries through self-learning during free time. 
 ''')
 
