@@ -30,7 +30,7 @@ st.image(image, width=150)
 st.markdown('## Summary', unsafe_allow_html=True)
 st.info('''
 - Motivated Learner, and have a passion for analytics by developing analytics products and delivering insights by writing articles. 
-- Strong relevant analytics experience from Urban Redevelopment Authority (URA), Changi General Hospital (CGH), and Ernst and Young (EY).
+- Strong relevant analytics experience from Urban Redevelopment Authority (URA).
 - Reading, understanding, and catching up with the up and coming analytics & machine learning libraries through self-learning during free time. 
 ''')
 
@@ -139,12 +139,12 @@ dhl_real_data = dhl_data['results'][0]
 dhl_lat = float(dhl_real_data['LATITUDE'])
 dhl_long = float(dhl_real_data['LONGITUDE'])
 
-cgh_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+'Changi General Hospital'+'&returnGeom=Y&getAddrDetails=Y'
-cgh_resp = requests.get(cgh_string)
-cgh_data = json.loads(cgh_resp.content)
-cgh_real_data = cgh_data['results'][0]
-cgh_lat = float(cgh_real_data['LATITUDE'])
-cgh_long = float(cgh_real_data['LONGITUDE'])
+# cgh_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+'Changi General Hospital'+'&returnGeom=Y&getAddrDetails=Y'
+# cgh_resp = requests.get(cgh_string)
+# cgh_data = json.loads(cgh_resp.content)
+# cgh_real_data = cgh_data['results'][0]
+# cgh_lat = float(cgh_real_data['LATITUDE'])
+# cgh_long = float(cgh_real_data['LONGITUDE'])
 
 ura_string = 'https://developers.onemap.sg/commonapi/search?searchVal='+'Urban Redevelopment Authority'+'&returnGeom=Y&getAddrDetails=Y'
 ura_resp = requests.get(ura_string)
@@ -156,8 +156,8 @@ ura_long = float(ura_real_data['LONGITUDE'])
 deloitte_lat = 1.279294354726619
 deloitte_long = 103.8492895
 
-ey_lat = 1.2823211397542482
-ey_long = 103.85174512329272
+# ey_lat = 1.2823211397542482
+# ey_long = 103.85174512329272
 
 m = folium.Map(location=[1.3627228720885567, 103.80849927659521], zoom_start=11)
 
@@ -166,8 +166,8 @@ folium.Marker(location=[smu_lat,smu_long], popup='Singapore Management Universit
 folium.Marker(location=[deloitte_lat,deloitte_long], popup='Deloitte: 2014',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
 folium.Marker(location=[dhl_lat,dhl_long], popup='DHL Express: 2019',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
 folium.Marker(location=[ura_lat,ura_long], popup='Urban Redevelopment Authority: 2021',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
-folium.Marker(location=[ey_lat,ey_long], popup='Ernst and Young: 2021',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
-folium.Marker(location=[cgh_lat,cgh_long], popup='Changi General Hospital: 2022-Present',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
+# folium.Marker(location=[ey_lat,ey_long], popup='Ernst and Young: 2021',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
+# folium.Marker(location=[cgh_lat,cgh_long], popup='Changi General Hospital: 2022-Present',icon=folium.Icon(icon="laptop", prefix='fa')).add_to(m)
 
 folium_static(m)
 
@@ -192,20 +192,20 @@ st.markdown('''
 ## Work Experience
 ''')
 
-txt('**Data Management Analyst**, Changi General Hospital, Singapore',
-'Jan 2022-Present')
-st.markdown('''
-- Preparing `2` regulatory reports to the Ministry of Health (MOH) and SingHealth on a daily basis regarding the operational situation of the hospital, bed occupancy rate, and inflight Covid-19 cases through database platforms including Oracle Business Intelligence Enterprise Edition (OBIEE) and SAP. 
-- Deliver Quality Incentive KPIs reporting in Tableau of `300+` medical discipline specialists across the hospital to the Medical Affairs monthly.
-- Performing complex data analysis and investigation on `600+` discharged patients' data through SAP and Sunrise Clinical Manager (SCM) for accurate reporting.
-''')
+# txt('**Data Management Analyst**, Changi General Hospital, Singapore',
+# 'Jan 2022-Present')
+# st.markdown('''
+# - Preparing `2` regulatory reports to the Ministry of Health (MOH) and SingHealth on a daily basis regarding the operational situation of the hospital, bed occupancy rate, and inflight Covid-19 cases through database platforms including Oracle Business Intelligence Enterprise Edition (OBIEE) and SAP. 
+# - Deliver Quality Incentive KPIs reporting in Tableau of `300+` medical discipline specialists across the hospital to the Medical Affairs monthly.
+# - Performing complex data analysis and investigation on `600+` discharged patients' data through SAP and Sunrise Clinical Manager (SCM) for accurate reporting.
+# ''')
 
-txt('**Business Analyst**, Ernst and Young, Singapore',
-'Sep 2021-Nov 2021')
-st.markdown('''
-- Conducted data extraction for reporting and analysis to support `30+` ticket troubleshooting and stakeholders’ requests by executing SQL scripts in SQL Server Management Studio databases.
-- Analysed insights on the `7` system utilisations of the client’s application through AWS CloudWatch dashboard reporting.
-''')
+# txt('**Business Analyst**, Ernst and Young, Singapore',
+# 'Sep 2021-Nov 2021')
+# st.markdown('''
+# - Conducted data extraction for reporting and analysis to support `30+` ticket troubleshooting and stakeholders’ requests by executing SQL scripts in SQL Server Management Studio databases.
+# - Analysed insights on the `7` system utilisations of the client’s application through AWS CloudWatch dashboard reporting.
+# ''')
 
 txt('**Geospatial & Data Science Intern**, Urban Redevelopment Authority, Singapore',
 'Jan 2021-Jul 2021')
